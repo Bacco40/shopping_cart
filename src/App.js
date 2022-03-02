@@ -2,15 +2,17 @@ import './App.css';
 import {useEffect,useState} from "react";
 import Products from './components/Products';
 import Navbar from './components/Navbar';
-import About from './components/About';
 import Home from './components/Home';
 import Checkout from './components/Checkout';
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import ItemDetail from './components/itemDetail';
+import { Route, Routes, useNavigate} from 'react-router-dom';
 
 function App() {
   const[items,setItems] = useState ([{}]);
   const[cart, setCart] = useState([]);
   const[quantity,setQuantity] = useState(0);
+  const[complete,setComplete] = useState(0);
+  let redirect = useNavigate();
 
   const fetchItems = async () => {
       const data = await fetch('https://fakestoreapi.com/products', { mode: 'cors' });
@@ -46,7 +48,7 @@ function App() {
     }else{
       setCart(existingItems => {
         return existingItems.map(item => {
-          return item.id === id ? { ...item, quantity: +item.quantity + 1 } : item
+          return item.id === id ? { ...item, quantity: +item.quantity + +value } : item
         })
       })
     }
@@ -54,7 +56,6 @@ function App() {
 
   const updateQuantity = (e) =>{
     const{id,value} = e.target;
-    console.log(e.target)
     setCart(existingItems => {
       return existingItems.map(item => {
         if(value ==="+"){
@@ -64,6 +65,13 @@ function App() {
         }
       })
     })
+  }
+
+  const handleCheckout = (e) =>{
+    setTimeout(()=>redirect('/'),3000);
+    setTimeout(()=>setComplete(0),3000);
+    setComplete(1);
+    setCart([]);
   }
 
   function adjustQuantity(){
@@ -84,15 +92,25 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
       <Navbar quantity={quantity}/>
         <Routes>
           <Route path='/' element={<Home/>}/>
-          <Route path='/about' element={<About/>}/>
-          <Route path='/products' element={<Products items={items} handleCartAdd={(e) => handleCartAdd(e) }/>}/>
-          <Route path='/cart' element={<Checkout cart={cart} updateQuantity={(e) => updateQuantity(e)}/>}/>
+          <Route path='/products' element={
+            <Products 
+              items={items} 
+              handleCartAdd={(e) => handleCartAdd(e) }
+            />}
+          />
+          <Route path='/cart' element={
+            <Checkout 
+              cart={cart} 
+              updateQuantity={(e) => updateQuantity(e)} 
+              handleCheckout={(e) => handleCheckout(e)} 
+              complete={complete} 
+            />}
+          />
+          <Route path='/products/:id' element={<ItemDetail items={items} handleCartAdd={(e) => handleCartAdd(e) }/>}/>
         </Routes>
-      </BrowserRouter>
     </div>
   );
 }

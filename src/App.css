@@ -12,7 +12,9 @@ html, body, #root{
 }
 nav{
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 0 8%;
+  justify-content: space-between;
   align-items: center;
   background-color: rgb(67, 73, 73);
   color: whitesmoke;
@@ -26,11 +28,10 @@ a{
   color: whitesmoke;
   text-decoration: none;
 }
-
 .links{
   display: flex;
-  width: 40%;
-  justify-content: space-around;
+  width: 50%;
+  justify-content: space-between;
   align-items: center;
   list-style: none;
 }
@@ -56,16 +57,23 @@ img{
 hr{
   border:1px solid rgb(211, 216, 216);
 }
-.add{
+.add, .add2, .add3{
   margin: 10px;
   padding: 25px 15px;
   background-color: rgb(67, 73, 73);
   color: whitesmoke;
   font-size:larger;
   font-weight: bold;
-  border-radius: 5px;
   border: 0;
   cursor: pointer;
+}
+.add2,.add3{
+  padding: 0;
+  height: 66px;
+  margin: 0;
+}
+.add3{
+  flex: 1;
 }
 .title{
   font-size: small;
@@ -80,15 +88,18 @@ hr{
   align-items: center;
   flex: 1 0 50%;
 }
-.detail,.details{
+.detail,.details,.details2{
   display: flex;
   flex-direction: column;
   flex: 1 0;
   text-align: start;
   gap: 5px;
 }
-.details{
+.details,.details2{
   gap:35px;
+}
+.details2{
+  min-width: 300px;
 }
 .pages{
   display: flex;
@@ -96,7 +107,7 @@ hr{
   justify-content: center;
   align-items: center;
 }
-.cart{
+.cart, .itemDetail{
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
@@ -109,6 +120,9 @@ hr{
   background-color: white;
   margin-bottom: 30px;
 }
+.itemDetail{
+  margin-top: 30px;
+}
 .cartItem{
   display: flex;
   gap: 20px;
@@ -120,6 +134,7 @@ hr{
   font-size: x-large;
   font-weight: bold;
   color:rgb(40, 43, 43) ;
+  flex: 1 0 20%;
 }
 .updateNumber{
   display: flex;
@@ -140,4 +155,92 @@ hr{
 }
 h1{
   color:rgb(40, 43, 43) ;
+}
+.cartBottom{
+  display: flex;
+  align-items: center;
+  flex: 1 0 100%;
+  gap: 25px;
+  padding-top: 15px;
+  justify-content: space-around;
+}
+.checkout, .checkout2{
+  background-color: rgb(40, 43, 43);
+  color: whitesmoke;
+  font-size:22px;
+  height: 66px;
+  font-weight: bold;
+  flex: 1 0 25%;
+  border: 0;
+  cursor: pointer;
+}
+.checkout2{
+  background-color: rgb(168, 36, 36);
+  color: whitesmoke;
+  font-size:22px;
+}
+.back{
+  display: flex;
+  flex: 1 0 100%;
+}
+.bigImage{
+  height: 420px;
+  width: 300px;
+}
+.title2{
+  font-size: 22px;
+  color: rgb(40, 43, 43);
+  font-weight: bold;
+}
+.imgDiv{
+  align-items: center;
+}
+.add3:hover{
+  background-color: whitesmoke;
+  border: solid 2px rgb(67, 73, 73);
+  color: rgb(67, 73, 73);  
+}
+.add2:hover{
+  background-color: whitesmoke;
+  border: solid 2px rgb(67, 73, 73);
+  color: rgb(67, 73, 73);
+}
+.checkout:hover{
+  background-color: whitesmoke;
+  border: solid 2px rgb(67, 73, 73);
+  color: rgb(67, 73, 73);  
+}
+.checkout2:hover{
+  color: rgb(168, 36, 36);
+  background-color: white;
+  border: solid 2px rgb(168, 36, 36);
+}
+.add:hover{
+  padding: 23px 13px;
+  background-color: white;
+  border: solid 2px rgb(67, 73, 73);
+  color: rgb(67, 73, 73);
+}
+.arrow:hover{
+  background-color: whitesmoke;
+  border: solid 2px rgb(67, 73, 73);
+  color: rgb(67, 73, 73);  
+}
+#product:hover{
+  letter-spacing: 3px;
+}
+#home{
+  width: 50px;
+}
+#cart{
+  width: 50px;
+}
+#product{
+  width: 90px;
+}
+#home:hover{
+  letter-spacing: 3px;
+}
+#cart:hover{
+  font-size: large;
 }

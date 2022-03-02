@@ -12,14 +12,14 @@ function Navbar({quantity}) {
             <h3>Logo</h3> 
         </Link>
         <ul className="links">
-            <Link className='link' to='/products'>
-                <li>Products</li>
+            <Link className='link' to='/'>
+                <li id="home">Home</li>
             </Link>
-            <Link className='link' to='/about'>
-                <li>About</li>
+            <Link className='link' to='/products'>
+                <li id="product">Products</li>
             </Link>
             <Link className='link' to='/cart'>
-                <li><FontAwesomeIcon icon="fa-solid fa-cart-shopping" />&nbsp;{quantity > 0 && quantity}</li>
+                <li id="cart"><FontAwesomeIcon icon="fa-solid fa-cart-shopping" />&nbsp;{quantity > 0 && quantity}</li>
             </Link>
         </ul>
     </nav>
