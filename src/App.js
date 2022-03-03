@@ -3,6 +3,7 @@ import {useEffect,useState} from "react";
 import Products from './components/Products';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
+import Contacts from './components/Contacts';
 import Checkout from './components/Checkout';
 import ItemDetail from './components/itemDetail';
 import { Route, Routes, useNavigate} from 'react-router-dom';
@@ -109,6 +110,7 @@ function App() {
               complete={complete} 
             />}
           />
+          <Route path='/contacts' element={<Contacts/>}/>
           <Route path='/products/:id' element={<ItemDetail items={items} handleCartAdd={(e) => handleCartAdd(e) }/>}/>
         </Routes>
     </div>
