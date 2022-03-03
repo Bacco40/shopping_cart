@@ -33,7 +33,7 @@ function Checkout({cart, updateQuantity, handleCheckout ,complete}) {
               <Cart key={cart.id} cart={cart} updateQuantity={updateQuantity}/>
             ))} 
             <div className="cartBottom">
-              <div className="total">Total : {total} €</div>
+              <div className="total">Total : {total.toFixed(2)} €</div>
               <button className="checkout" onClick={handleCheckout}>Checkout&nbsp;&nbsp;&nbsp;&nbsp;<FontAwesomeIcon icon="fa-solid fa-circle-check" /></button>
             </div>
             <Link className="back" to='/products'>

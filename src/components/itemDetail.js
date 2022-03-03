@@ -50,7 +50,7 @@ function ItemDetail({items, handleCartAdd}) {
                 <div className="number">{quantity}</div>
                 <button className="arrow" value="+" onClick={(e) => updateQuantity(e)}>+</button>
             </div>
-            <div >{item.price}€</div> 
+            <div >{item.price.toFixed(2)}€</div> 
             {goCheck===false && 
                 <button className="add2" id={item.id} name={item.price} onClick={(e)=>{handleCartAdd(e);handleUpdate(e);}} value={quantity}>
                     <FontAwesomeIcon icon="fa-solid fa-plus" />&nbsp;&nbsp; Add to cart

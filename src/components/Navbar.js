@@ -9,17 +9,17 @@ function Navbar({quantity}) {
   return (
     <nav>
         <Link className='link' to='/'>
-            <h3>Logo</h3> 
+            <h2>Not-A-Store</h2> 
         </Link>
-        <ul className="links">
-            <Link className='link' to='/'>
-                <li id="home">Home</li>
-            </Link>
+        <ul className="links">            
             <Link className='link' to='/products'>
                 <li id="product">Products</li>
             </Link>
+            <Link className='link' to='/contacts'>
+                <li id="contacts">Contacts</li>
+            </Link>
             <Link className='link' to='/cart'>
-                <li id="cart"><FontAwesomeIcon icon="fa-solid fa-cart-shopping" />&nbsp;{quantity > 0 && quantity}</li>
+                <li id="cart">Cart &nbsp;<FontAwesomeIcon icon="fa-solid fa-cart-shopping" />&nbsp;{quantity > 0 && quantity}</li>
             </Link>
         </ul>
     </nav>

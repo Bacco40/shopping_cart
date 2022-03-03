@@ -12,7 +12,7 @@ function SingleProduct({item, handleCartAdd}) {
                 <div className="info">
                     <div className="detail">
                        <div className="title">{title}</div>
-                        <div className="price">{price}€</div>  
+                        <div className="price">{price.toFixed(2)}€</div>  
                     </div>
                     <button className="add" id={item.id} name={price} onClick={handleCartAdd} value="1">Add to cart</button>
                 </div>
