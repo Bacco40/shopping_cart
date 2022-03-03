@@ -8,7 +8,7 @@ library.add(faCartShopping);
 function Navbar({quantity}) {
   return (
     <nav>
-        <Link className='link' to='/'>
+        <Link className='link' to='/shopping_cart'>
             <h2>Not-A-Store</h2> 
         </Link>
         <ul className="links">            

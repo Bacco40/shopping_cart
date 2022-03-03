@@ -95,7 +95,7 @@ function App() {
     <div className="App">
       <Navbar quantity={quantity}/>
         <Routes>
-          <Route path='/' element={<Home/>}/>
+          <Route path='/shopping_cart' element={<Home/>}/>
           <Route path='/products' element={
             <Products 
               items={items} 
