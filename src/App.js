@@ -69,7 +69,7 @@ function App() {
   }
 
   const handleCheckout = (e) =>{
-    setTimeout(()=>redirect('/'),3000);
+    setTimeout(()=>redirect('/shopping_cart'),3000);
     setTimeout(()=>setComplete(0),3000);
     setComplete(1);
     setCart([]);
