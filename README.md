@@ -1,3 +1,12 @@
+# Shopping Cart
+This project, is part of the Odin curriculum and made using 
+JavaScript and React, the content of the website is fetched by the [Fake store API](https://fakestoreapi.com),
+and the purpose was to emulate an online shop website and manage the shopping cart efficiently.
+
+Hope you like it!
+
+👉[Live Demo](https://bacco40.github.io/shopping_cart/) 👈
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
